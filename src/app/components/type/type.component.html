@@ -1,0 +1,8 @@
+<ul class="list-group">
+    <li  [class]="getAllTypesClass()" routerLink = "/products">Tüm Ürünler</li>
+    <li (click)="setCurrentType(type)"
+    routerLink = "/announcedPet/type/{{type.type}}"
+    *ngFor="let type of petTypes" 
+    [class]="getCurrentTypeClass(type)">
+    {{type.buttonText}}</li>
+</ul>

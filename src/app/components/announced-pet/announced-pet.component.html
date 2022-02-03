@@ -1,0 +1,31 @@
+
+<table class="table table-info table-striped">
+    <thead>
+        <tr >
+          <th scope="col">#</th>
+          <th scope="col">Type</th>
+          <th scope="col">Province</th>
+          <th scope="col">User</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let announcedPet of announcedPets | paginate : {
+                                                          itemsPerPage: pageSize,
+                                                          currentPage: page,
+                                                          totalItems: count
+                                                        };">                                            
+          <th scope="row">{{announcedPet.id}}</th>
+          <td>{{announcedPet.petType}}</td>
+          <td>{{announcedPet.province.name}}</td>
+          <td>{{announcedPet.user.nickName}}</td>
+        </tr>
+      </tbody>
+  </table>
+  <div class="d-flex justify-content-center">
+    <pagination-controls 
+      
+      previousLabel="Prev" 
+      nextLabel="Next" 
+      (pageChange)="onTableDataChange($event)">
+    </pagination-controls>
+  </div>

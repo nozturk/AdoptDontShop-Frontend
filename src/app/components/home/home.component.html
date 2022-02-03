@@ -1,0 +1,11 @@
+<div class="text-center">
+  <div class="row h-100" style="background-color:darkolivegreen;" >
+    <div *ngFor='let type of petTypes' class="col-md-3"  >
+      <button type="button" class="btn btn-lg btn-warning" style="margin-bottom: 15%;margin-top: 15%;" [routerLink] = "'/announcedPet/type/' + type.type">{{type.buttonText}}</button>
+    </div>
+    <div class="col-md-3">
+      <button type="button" class="btn btn-lg btn-warning" style="margin-bottom: 15%;margin-top: 15%;" [routerLink] = "'/announcedPet'">All Types</button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
